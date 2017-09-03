@@ -11,7 +11,7 @@ main = ->
 tabs = ->
   tabs = ['manufacturer', 'production', 'contacts']
 
-  tabs.forEach tabHandler(@), @
+  tabs.forEach (tab) -> tabHandler tab
 
   $('#name').on 'click', ->
 
@@ -19,7 +19,7 @@ tabs = ->
     activeName = doc.querySelector '#name-active'
     main = doc.querySelector 'main'
 
-    activeTabs.forEach @.style.opacity = 0, @
+    activeTabs.forEach (tab) -> tab.style.opacity = 0
     activeName.style.opacity = 1
 
     $.ajax
@@ -41,7 +41,7 @@ tabHandler = (name) -> $('#' + name).on 'click', ->
   main = doc.querySelector 'main'
 
   activeName.style.opacity = 0
-  activeTabs.forEach @.style.opacity = 0, @
+  activeTabs.forEach (tab) -> tab.style.opacity = 0
 
   doc.querySelector('#' + name + ' .tab-active').style.opacity = 1
 
