@@ -85,6 +85,9 @@ header {
 #name-active {
   top: 48px;
 }
+main {
+  transition: all 0.4s cubic-bezier(0.2, 0.55, 0.65, 1);
+}
 #center {
   font-size: 75px;
   text-align: center;
