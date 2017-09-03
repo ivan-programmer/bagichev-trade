@@ -40,7 +40,7 @@ gulp.task 'mincss', ->
 gulp.task 'coffee', ->
   gulp.src './source/script.coffee'
 
-    .pipe coffee {bare: yes}
+    .pipe coffee()
     .on 'error', (err) ->
       console.error '\n\n*** COFFEE Compile Error occurred *** \n\n'
       console.log err

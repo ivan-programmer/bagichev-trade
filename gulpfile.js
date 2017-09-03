@@ -38,9 +38,7 @@ gulp.task('mincss', function() {
 });
 
 gulp.task('coffee', function() {
-  gulp.src('./source/script.coffee').pipe(coffee({
-    bare: true
-  })).on('error', function(err) {
+  gulp.src('./source/script.coffee').pipe(coffee()).on('error', function(err) {
     console.error('\n\n*** COFFEE Compile Error occurred *** \n\n');
     console.log(err);
     return console.error('\n\n*** COFFEE Compile Error backtrace ended *** \n\n');
