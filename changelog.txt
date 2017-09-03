@@ -1,3 +1,4 @@
+v0.1.2 modified code from imperative to declarative programming
 v0.1.2 created repo, readme.txt and license.txt
 v0.1.1 added header with tabs working by ajax
 v0.1.0 using stylus and coffeescript
