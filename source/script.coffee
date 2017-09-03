@@ -9,15 +9,23 @@ main = ->
   do onStart
 
 tabs = ->
-  tabHandler tab for tab in ['manufacturer', 'production', 'contacts']
+  tabs = ['manufacturer', 'production', 'contacts']
+
+  tabs.forEach tabHandler(@), @
+
   $('#name').on 'click', ->
+
     activeTabs = doc.querySelectorAll '.tab-active'
-    activeTab.style.opacity = 0 for activeTab in activeTabs
-    doc.querySelector('#name-active').style.opacity = 1
+    activeName = doc.querySelector '#name-active'
+    main = doc.querySelector 'main'
+
+    activeTabs.forEach @.style.opacity = 0, @
+    activeName.style.opacity = 1
+
     $.ajax
       url: './pages/main.php'
       cache: off
-      success: (page) -> doc.querySelector('main').innerHTML = page
+      success: (page) -> main.innerHTML = page
       beforeSend: -> do preloader
 
 handlers = ->
@@ -26,17 +34,22 @@ onStart = -> $('#name').trigger 'click'
 
 # ---------- #
 
-tabHandler = (id) -> $('#' + id).on 'click', ->
+tabHandler = (name) -> $('#' + name).on 'click', ->
+
   activeName = doc.querySelector '#name-active'
   activeTabs = doc.querySelectorAll '.tab-active'
-  doc.querySelector('#name-active').style.opacity = 0
-  activeTab.style.opacity = 0 for activeTab in activeTabs
-  doc.querySelector('#' + id + ' .tab-active').style.opacity = 1
+  main = doc.querySelector 'main'
+
+  activeName.style.opacity = 0
+  activeTabs.forEach @.style.opacity = 0, @
+
+  doc.querySelector('#' + name + ' .tab-active').style.opacity = 1
+
   $.ajax
-    url: './pages/' + id + '.php'
+    url: './pages/' + name + '.php'
     cache: off
     type: 'GET'
-    success: (page) -> doc.querySelector('main').innerHTML = page
+    success: (page) -> main.innerHTML = page
     beforeSend: -> do preloader
 
 preloader = ->

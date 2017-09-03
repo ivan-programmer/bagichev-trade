@@ -15,25 +15,20 @@ main = function() {
 };
 
 tabs = function() {
-  var i, len, ref, tab;
-  ref = ['manufacturer', 'production', 'contacts'];
-  for (i = 0, len = ref.length; i < len; i++) {
-    tab = ref[i];
-    tabHandler(tab);
-  }
+  tabs = ['manufacturer', 'production', 'contacts'];
+  tabs.forEach(tabHandler(this), this);
   return $('#name').on('click', function() {
-    var activeTab, activeTabs, j, len1;
+    var activeName, activeTabs;
     activeTabs = doc.querySelectorAll('.tab-active');
-    for (j = 0, len1 = activeTabs.length; j < len1; j++) {
-      activeTab = activeTabs[j];
-      activeTab.style.opacity = 0;
-    }
-    doc.querySelector('#name-active').style.opacity = 1;
+    activeName = doc.querySelector('#name-active');
+    main = doc.querySelector('main');
+    activeTabs.forEach(this.style.opacity = 0, this);
+    activeName.style.opacity = 1;
     return $.ajax({
       url: './pages/main.php',
       cache: false,
       success: function(page) {
-        return doc.querySelector('main').innerHTML = page;
+        return main.innerHTML = page;
       },
       beforeSend: function() {
         return preloader();
@@ -48,23 +43,21 @@ onStart = function() {
   return $('#name').trigger('click');
 };
 
-tabHandler = function(id) {
-  return $('#' + id).on('click', function() {
-    var activeName, activeTab, activeTabs, i, len;
+tabHandler = function(name) {
+  return $('#' + name).on('click', function() {
+    var activeName, activeTabs;
     activeName = doc.querySelector('#name-active');
     activeTabs = doc.querySelectorAll('.tab-active');
-    doc.querySelector('#name-active').style.opacity = 0;
-    for (i = 0, len = activeTabs.length; i < len; i++) {
-      activeTab = activeTabs[i];
-      activeTab.style.opacity = 0;
-    }
-    doc.querySelector('#' + id + ' .tab-active').style.opacity = 1;
+    main = doc.querySelector('main');
+    activeName.style.opacity = 0;
+    activeTabs.forEach(this.style.opacity = 0, this);
+    doc.querySelector('#' + name + ' .tab-active').style.opacity = 1;
     return $.ajax({
-      url: './pages/' + id + '.php',
+      url: './pages/' + name + '.php',
       cache: false,
       type: 'GET',
       success: function(page) {
-        return doc.querySelector('main').innerHTML = page;
+        return main.innerHTML = page;
       },
       beforeSend: function() {
         return preloader();

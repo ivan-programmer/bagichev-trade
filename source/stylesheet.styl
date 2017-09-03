@@ -1,5 +1,5 @@
 /* Stylesheet by Ivan Vinogradov for Bagichev Trade */
-transition = cubic-bezier(.2, .55, .65, 1)
+tran = cubic-bezier(.2, .55, .65, 1)
 
 @font-face
   font-family 'Proxima'
@@ -41,7 +41,7 @@ header
   font-size 22px
   min-width 200px
   color #cecece
-  transition all 265ms transition
+  transition all 265ms tran
   span
     position relative
     top 32.5px
@@ -60,7 +60,7 @@ header
   font-size 30px
   min-width 450px
   color #cecece
-  transition all 265ms transition
+  transition all 265ms tran
   span
     position relative
     top 27.5px
@@ -76,13 +76,16 @@ header
   box-shadow 0 0 10px rgba(0, 0, 0, .7)
   background-color #fff
   height 5px
-  transition all 265ms transition
+  transition all 265ms tran
 
 .tab-active
   top 58px
 
 #name-active
   top 48px
+
+main
+  transition all .4s tran
 
 #center
   font-size 75px
@@ -94,7 +97,7 @@ header
   left 50%
   margin-top -45px
   margin-left -315px
-  transition all .4s transition
+  transition all .4s tran
 
 button
   background-color transparent
@@ -106,7 +109,7 @@ button
   font-size 25px
   font-family Proxima
   font-weight lighter
-  transition all 265ms transition
+  transition all 265ms tran
 
 button:hover
   border-radius 21px
@@ -121,7 +124,7 @@ a
   color #bbb
   font-weight bold
   text-decoration none
-  transition all .4s transition
+  transition all .4s tran
 
 a:hover
   color #fff
@@ -135,7 +138,7 @@ footer
   background-color #222
   color #fff
   box-shadow 0 0 10px rgba(0, 0, 0, .7)
-  transition all .4s transition
+  transition all .4s tran
 
 footer:hover
   background-color #111
@@ -148,11 +151,11 @@ footer:hover
 
 .footer-image
   padding 12.5px 50px
-  transition all 265ms transition
+  transition all 265ms tran
   img
     width 50px
     height 50px
-    transition all 265ms transition
+    transition all 265ms tran
   img:hover
     transform scale(1.2)
 
