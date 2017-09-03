@@ -1,0 +1,27 @@
+html	/Users/ivan/Desktop/site/public/index.html	/^<html>$/;"	function	line:3
+head	/Users/ivan/Desktop/site/public/index.html	/^  <head>$/;"	function	line:4
+meta	/Users/ivan/Desktop/site/public/index.html	/^    <meta charset="utf-8" \/>$/;"	function	line:5
+title	/Users/ivan/Desktop/site/public/index.html	/^    <title>Ivan Vinogradov<\/title>$/;"	function	line:6
+link	/Users/ivan/Desktop/site/public/index.html	/^    <link rel="stylesheet" href="stylesheet.css" \/>$/;"	function	line:7
+body	/Users/ivan/Desktop/site/public/index.html	/^  <body>$/;"	function	line:9
+div	/Users/ivan/Desktop/site/public/index.html	/^    <div id="main">$/;"	function	line:11
+header	/Users/ivan/Desktop/site/public/index.html	/^      <header>$/;"	function	line:13
+div	/Users/ivan/Desktop/site/public/index.html	/^        <div id="name" class="tab"><span>{{ name }}<\/span><\/div>$/;"	function	line:14
+div	/Users/ivan/Desktop/site/public/index.html	/^        <div class="tab" v-for="tab in tabs"><span>{{ tab }}<\/span><\/div>$/;"	function	line:15
+main	/Users/ivan/Desktop/site/public/index.html	/^      <main>$/;"	function	line:17
+div	/Users/ivan/Desktop/site/public/index.html	/^        <div id="center" v-show="false">{{ centerText }}<\/div>$/;"	function	line:18
+footer	/Users/ivan/Desktop/site/public/index.html	/^      <footer v-show="false"><\/footer>$/;"	function	line:20
+script	/Users/ivan/Desktop/site/public/index.html	/^    <script src=".\/libs\/jquery.min.js" type="text\/javascript"><\/script>$/;"	function	line:23
+script	/Users/ivan/Desktop/site/public/index.html	/^    <script src=".\/libs\/vue.min.js" type="text\/javascript"><\/script>$/;"	function	line:24
+script	/Users/ivan/Desktop/site/public/index.html	/^    <script src="script.js" type="text\/javascript"><\/script>$/;"	function	line:25
+nameClick	/Users/ivan/desktop/site/source/script.coffee	/^    nameClick: ->$/;"	function	line:41
+tabClick	/Users/ivan/desktop/site/source/script.coffee	/^    tabClick: (event) ->$/;"	function	line:46
+tabs	/Applications/MAMP/htdocs/bagichev-trade/public/index.php	/^  $tabs = [$/;"	variable	line:2
+footer_images	/Applications/MAMP/htdocs/bagichev-trade/public/index.php	/^  $footer_images = [$/;"	variable	line:8
+id	/Applications/MAMP/htdocs/bagichev-trade/public/index.php	/^      <? foreach($tabs as $id => $name): ?>$/;"	variable	line:34
+alt	/Applications/MAMP/htdocs/bagichev-trade/public/index.php	/^      <? foreach($footer_images as $alt => $filename): ?>$/;"	variable	line:48
+main	/Applications/MAMP/htdocs/bagichev-trade/source/script.coffee	/^main = ->$/;"	function	line:5
+tabs	/Applications/MAMP/htdocs/bagichev-trade/source/script.coffee	/^tabs = ->$/;"	function	line:10
+handlers	/Applications/MAMP/htdocs/bagichev-trade/source/script.coffee	/^handlers = ->$/;"	function	line:17
+onStart	/Applications/MAMP/htdocs/bagichev-trade/source/script.coffee	/^onStart = ->$/;"	function	line:21
+tabHandler	/Applications/MAMP/htdocs/bagichev-trade/source/script.coffee	/^tabHandler = (id) ->$/;"	function	line:27

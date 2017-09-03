@@ -1,0 +1,17 @@
+{
+  "name": "bagichev-trade",
+  "description": "Site by Ivan Vinogradov specially for Bagichev Trade",
+  "main": "./public/script.js",
+  "authors": [
+    "Ivan Vinogradov"
+  ],
+  "license": "MIT",
+  "homepage": "./public/index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
