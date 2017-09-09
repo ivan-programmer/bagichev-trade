@@ -2,7 +2,7 @@
 
 gulp = require 'gulp'
 stylus = require 'gulp-stylus'
-coffee = require 'gulp-coffeescript'
+coffee = require 'gulp-coffee'
 mincss = require 'gulp-csso'
 minjs = require 'gulp-uglify'
 rename = require 'gulp-rename'
