@@ -1,5 +1,6 @@
 <?php
   $tabs = [
+    'main' => 'Bagichev Trade',
     'manufacturer' => 'Производитель',
     'production' => 'Продукция',
     'contacts' => 'Контакты'
@@ -28,10 +29,6 @@
   <div id='wrapper'>
 
     <header>
-      <div id='name'>
-        <span>Bagichev Trade</span>
-        <div id="name-active"></div>
-      </div>
       <? foreach($tabs as $id => $name): ?>
         <div class='tab' id='<?= $id ?>'>
           <span><?= $name ?></span>
@@ -41,7 +38,7 @@
     </header>
 
     <main></main>
-    
+
     <footer>
       <div id='footer-images'>
       <? foreach($footer_images as $alt => $filename): ?>

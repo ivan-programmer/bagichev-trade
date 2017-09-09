@@ -52,7 +52,15 @@ header
   color #fff
   font-weight normal
 
-#name
+.tab-active
+  position relative
+  box-shadow 0 0 10px rgba(0, 0, 0, .7)
+  background-color #fff
+  height 5px
+  transition all 265ms tran
+  top 58px
+
+#main
   font-weight lighter
   height 90px
   background-color #111
@@ -65,24 +73,11 @@ header
     position relative
     top 27.5px
 
-#name:hover
+#main:hover
   background-color #000
   font-weight normal
   color #fff
   opacity 1
-
-.tab-active, #name-active
-  position relative
-  box-shadow 0 0 10px rgba(0, 0, 0, .7)
-  background-color #fff
-  height 5px
-  transition all 265ms tran
-
-.tab-active
-  top 58px
-
-#name-active
-  top 48px
 
 main
   transition all .4s tran
