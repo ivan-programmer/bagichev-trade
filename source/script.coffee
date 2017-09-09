@@ -1,56 +1,49 @@
 ### Script by Ivan Vinogradov for Bagichev Trade ###
 
 doc = document
+
 $ -> do main
 
 main = ->
   do tabs
-  do handlers
   do onStart
 
 tabs = ->
-  tabs = ['manufacturer', 'production', 'contacts']
+  mainTab = new Tab 'main'
+  manufacturerTab = new Tab 'manufacturer'
+  productionTab = new Tab 'production'
+  contactsTab = new Tab 'contacts'
 
-  tabs.forEach (tab) -> tabHandler tab
+  tabs = [mainTab, manufacturerTab, productionTab, contactsTab]
 
-  $('#name').on 'click', ->
+  tabs.forEach (tab) -> do tab.onClick
 
-    activeTabs = doc.querySelectorAll '.tab-active'
-    activeName = doc.querySelector '#name-active'
-    main = doc.querySelector 'main'
+class Tab
+  constructor: (name) -> @setName name
+  setName: (@name) ->
+  getName: -> @name
+  onClick: ->
+    name = do @getName
+    $('#' + name).on 'click', ->
+      main = doc.querySelector 'main'
 
-    activeTabs.forEach (tab) -> tab.style.opacity = 0
-    activeName.style.opacity = 1
+      $('.tab-active').css
+        opacity: 0
 
-    $.ajax
-      url: './pages/main.php'
-      cache: off
-      success: (page) -> main.innerHTML = page
-      beforeSend: -> do preloader
+      $('#' + name + ' .tab-active').css
+        opacity: 1
 
-handlers = ->
+      $.ajax
+        url: './pages/' + name + '.php'
+        cache: off
+        type: 'GET'
+        success: (page) -> main.innerHTML = page
+        beforeSend: -> do preloader
 
-onStart = -> $('#name').trigger 'click'
-
-# ---------- #
-
-tabHandler = (name) -> $('#' + name).on 'click', ->
-
-  activeName = doc.querySelector '#name-active'
-  activeTabs = doc.querySelectorAll '.tab-active'
-  main = doc.querySelector 'main'
-
-  activeName.style.opacity = 0
-  activeTabs.forEach (tab) -> tab.style.opacity = 0
-
-  doc.querySelector('#' + name + ' .tab-active').style.opacity = 1
-
-  $.ajax
-    url: './pages/' + name + '.php'
-    cache: off
-    type: 'GET'
-    success: (page) -> main.innerHTML = page
-    beforeSend: -> do preloader
+onStart = ->
+  $('#main .tab-active').css
+    top: '48px'
+  $('#main').trigger 'click'
 
 preloader = ->
   # Add preloader here...
